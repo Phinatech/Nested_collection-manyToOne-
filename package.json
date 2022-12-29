@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@types/express": "^4.17.15",
+    "@types/mongoose": "^5.11.97",
+    "@types/multer": "^1.4.7",
+    "cloudinary": "^1.33.0",
+    "express": "^4.18.2",
+    "init": "^0.1.2",
+    "mongoose": "^6.8.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "name": "nested-collection",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
