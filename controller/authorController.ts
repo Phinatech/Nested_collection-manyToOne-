@@ -7,11 +7,12 @@ import authorModel from "../model/authorModel";
 //Creating all authors
 const Posting = async (req: Request, res: Response): Promise<Response> => {
   try {
-    const cloudImg = await cloudinary.uploader.upload(req.file!.path)
-    const {  bio, authorName } = req.body;
+    const cloudImg = await cloudinary.uploader.upload(req?.file!.path)
+    // console.log(req.file)
+    const {authorImg,bio,authorName} = req.body;
     const PostingAuthor = await authorModel.create({
-      authorImg:cloudImg,
-      bio,
+      authorImg:cloudImg.secure_url,
+      bio: bio? bio:`welcome to  ${authorName} bookstore`,
       authorName,
     });
     return res.status(201).json({
@@ -21,6 +22,7 @@ const Posting = async (req: Request, res: Response): Promise<Response> => {
   } catch (error) {
     return res.status(404).json({
       message: "Couldn't Create authors ",
+      
     });
   }
 };
